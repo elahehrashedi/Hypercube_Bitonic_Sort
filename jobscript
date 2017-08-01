@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -l ncpus=8
+#PBS -l nodes=4:ppn=2
+#PBS -o /wsu/home/fp/fp06/fp0634/hw4/o_cubeMPI
+#PBS -e /wsu/home/fp/fp06/fp0634/hw4/e_cubeMPI
+#PBS -q wsuq
+ 
+module load openmpi-1.8.8
+/wsu/apps/gnu-4.4.7/openmpi/openmpi-1.8.8/bin/mpirun \
+-machinefile $PBS_NODEFILE \
+-np 8 \
+/wsu/home/fp/fp06/fp0634/hw4/cubeMPI
